@@ -31,9 +31,21 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Stack(
         fit: StackFit.expand,
-        children: [Image.asset(selectedImage, fit: BoxFit.cover)],
+        children: [
+          Image.asset(selectedImage, fit: BoxFit.cover),
+          Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [Colors.black12, Colors.black54],
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
