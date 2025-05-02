@@ -18,10 +18,18 @@ class _HomePageState extends State<HomePage> {
     "images/5_image.jpg",
     "images/6_image.jpg",
   ];
+  late String selectedImage;
+
+  final Random random = Random();
+
+  @override
+  void initState() {
+    super.initState();
+    selectedImage = images[random.nextInt(images.length)];
+  }
 
   @override
   Widget build(BuildContext context) {
-    final String selectedImage = images[Random().nextInt(images.length)];
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
