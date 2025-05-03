@@ -68,6 +68,15 @@ class _HomePageState extends State<HomePage> {
                     size: 40.0,
                   ),
                 ),
+                SizedBox(width: 12.0),
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.favorite_border,
+                    color: Colors.white,
+                    size: 40.0,
+                  ),
+                ),
               ],
             ),
           ],
