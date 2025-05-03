@@ -42,25 +42,17 @@ class _HomePageState extends State<HomePage> {
             colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
           ),
         ),
-        child: Stack(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Align(
-              alignment: Alignment.center,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    "Example text",
-                    style: TextStyle(color: Colors.white, fontSize: 40.0),
-                  ),
-                  Text(
-                    "-Example author",
-                    style: TextStyle(color: Colors.white, fontSize: 20.0),
-                  ),
-                ],
-              ),
+            Text(
+              "Example text",
+              style: TextStyle(color: Colors.white, fontSize: 40.0),
+            ),
+            Text(
+              "-Example author",
+              style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
           ],
         ),
