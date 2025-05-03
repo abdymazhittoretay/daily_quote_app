@@ -54,6 +54,22 @@ class _HomePageState extends State<HomePage> {
               "-Example author",
               style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
+            SizedBox(height: 12.0),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.restart_alt,
+                    color: Colors.white,
+                    size: 40.0,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
