@@ -39,8 +39,19 @@ class _HomePageState extends State<HomePage> {
           image: DecorationImage(
             image: AssetImage(selectedImage),
             fit: BoxFit.cover,
-            colorFilter: ColorFilter.mode(Colors.black38, BlendMode.darken),
+            colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
           ),
+        ),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: Text("Example text", style: TextStyle(
+                color: Colors.white,
+                fontSize: 32.0
+              ),),
+            )
+          ],
         ),
       ),
     );
