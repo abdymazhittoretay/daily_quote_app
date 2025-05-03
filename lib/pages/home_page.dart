@@ -42,46 +42,49 @@ class _HomePageState extends State<HomePage> {
             colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              "Example text",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 40.0),
-            ),
-            Text(
-              "-Example author",
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white, fontSize: 20.0),
-            ),
-            SizedBox(height: 12.0),
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.restart_alt,
-                    color: Colors.white,
-                    size: 40.0,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                "Example text",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 40.0),
+              ),
+              Text(
+                "-Example author",
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.white, fontSize: 20.0),
+              ),
+              SizedBox(height: 12.0),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.restart_alt,
+                      color: Colors.white,
+                      size: 40.0,
+                    ),
                   ),
-                ),
-                SizedBox(width: 12.0),
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.favorite_border,
-                    color: Colors.white,
-                    size: 40.0,
+                  SizedBox(width: 12.0),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.favorite_border,
+                      color: Colors.white,
+                      size: 40.0,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
