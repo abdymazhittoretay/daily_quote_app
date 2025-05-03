@@ -48,10 +48,12 @@ class _HomePageState extends State<HomePage> {
           children: [
             Text(
               "Example text",
+              textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white, fontSize: 40.0),
             ),
             Text(
               "-Example author",
+              textAlign: TextAlign.center,
               style: TextStyle(color: Colors.white, fontSize: 20.0),
             ),
             SizedBox(height: 12.0),
