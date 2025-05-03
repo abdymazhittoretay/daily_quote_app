@@ -32,20 +32,16 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.asset(selectedImage, fit: BoxFit.cover),
-          Container(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [Colors.black12, Colors.black54],
-              ),
-            ),
+      body: Container(
+        width: double.maxFinite,
+        height: double.maxFinite,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(selectedImage),
+            fit: BoxFit.cover,
+            colorFilter: ColorFilter.mode(Colors.black38, BlendMode.darken),
           ),
-        ],
+        ),
       ),
     );
   }
