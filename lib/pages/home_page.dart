@@ -46,11 +46,22 @@ class _HomePageState extends State<HomePage> {
           children: [
             Align(
               alignment: Alignment.center,
-              child: Text("Example text", style: TextStyle(
-                color: Colors.white,
-                fontSize: 32.0
-              ),),
-            )
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "Example text",
+                    style: TextStyle(color: Colors.white, fontSize: 40.0),
+                  ),
+                  Text(
+                    "-Example author",
+                    style: TextStyle(color: Colors.white, fontSize: 20.0),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
