@@ -18,14 +18,14 @@ class _HomePageState extends State<HomePage> {
     "images/5_image.jpg",
     "images/6_image.jpg",
   ];
-  late String selectedImage;
+  late String _selectedImage;
 
   final Random random = Random();
 
   @override
   void initState() {
     super.initState();
-    selectedImage = images[random.nextInt(images.length)];
+    _selectedImage = images[random.nextInt(images.length)];
   }
 
   @override
@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
         height: double.maxFinite,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(selectedImage),
+            image: AssetImage(_selectedImage),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
           ),
