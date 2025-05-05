@@ -64,9 +64,9 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child:
               randomQuote == null
-                  ? Center(child: CircularProgressIndicator(
-                    color: Colors.white,
-                  ))
+                  ? Center(
+                    child: CircularProgressIndicator(color: Colors.white),
+                  )
                   : Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -77,10 +77,22 @@ class _HomePageState extends State<HomePage> {
                         style: TextStyle(color: Colors.white, fontSize: 30.0),
                       ),
                       SizedBox(height: 12.0),
-                      Text(
-                        randomQuote!.author,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 18.0),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(Icons.person, color: Colors.white),
+                          SizedBox(width: 6.0),
+                          Text(
+                            randomQuote!.author,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                        ],
                       ),
                       SizedBox(height: 12.0),
                       Row(
