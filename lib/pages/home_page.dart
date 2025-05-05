@@ -86,7 +86,9 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              getRandomQuote();
+                            },
                             icon: Icon(
                               Icons.restart_alt,
                               color: Colors.white,
