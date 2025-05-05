@@ -71,6 +71,11 @@ class _HomePageState extends State<HomePage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
+                      Icon(
+                        Icons.format_quote,
+                        size: 100.0,
+                        color: Colors.white,
+                      ),
                       Text(
                         randomQuote!.quote,
                         textAlign: TextAlign.center,
