@@ -37,12 +37,16 @@ class _HomePageState extends State<HomePage> {
 
   Future<void> getRandomQuote() async {
     final Uri url = Uri.https("zenquotes.io", "/api/random");
-    final response = await http.get(url);
-    if (response.statusCode == 200) {
-      final data = jsonDecode(response.body);
-      setState(() {
-        randomQuote = QuoteModel(quote: data[0]["q"], author: data[0]["a"]);
-      });
+    try {
+      final response = await http.get(url);
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        setState(() {
+          randomQuote = QuoteModel(quote: data[0]["q"], author: data[0]["a"]);
+        });
+      }
+    } catch (e) {
+      print("Some http error: $e");
     }
   }
 
