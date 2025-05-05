@@ -78,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         randomQuote!.author,
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 15.0),
+                        style: TextStyle(color: Colors.white, fontSize: 18.0),
                       ),
                       SizedBox(height: 12.0),
                       Row(
