@@ -64,7 +64,9 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child:
               randomQuote == null
-                  ? Center(child: CircularProgressIndicator())
+                  ? Center(child: CircularProgressIndicator(
+                    color: Colors.white,
+                  ))
                   : Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
