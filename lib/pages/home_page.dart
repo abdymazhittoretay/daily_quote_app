@@ -72,12 +72,13 @@ class _HomePageState extends State<HomePage> {
                       Text(
                         randomQuote!.quote,
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 40.0),
+                        style: TextStyle(color: Colors.white, fontSize: 30.0),
                       ),
+                      SizedBox(height: 12.0),
                       Text(
                         randomQuote!.author,
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: Colors.white, fontSize: 20.0),
+                        style: TextStyle(color: Colors.white, fontSize: 15.0),
                       ),
                       SizedBox(height: 12.0),
                       Row(
