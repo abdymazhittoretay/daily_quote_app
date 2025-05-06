@@ -11,6 +11,9 @@ class QuoteProvider extends ChangeNotifier {
     getRandomQuotes();
   }
 
+  // Background Image
+
+  late String _selectedImage;
   final List<String> images = [
     "images/1_image.jpg",
     "images/2_image.jpg",
@@ -19,25 +22,19 @@ class QuoteProvider extends ChangeNotifier {
     "images/5_image.jpg",
     "images/6_image.jpg",
   ];
-  late String _selectedImage;
-
   final Random random = Random();
-
-  List<QuoteModel> _quotes = [];
-
-  int _index = 0;
-
-  bool _isLoading = false;
-
-  String get selectedImage => _selectedImage;
-  int get index => _index;
-  QuoteModel? get quote => _quotes.isEmpty ? null : _quotes[_index];
-  bool get isLoading => _isLoading;
 
   void selectRandomImage() {
     _selectedImage = images[random.nextInt(images.length)];
     notifyListeners();
   }
+
+  // Quotes
+
+  List<QuoteModel> _quotes = [];
+  int _index = 0;
+
+  bool _isLoading = false;
 
   void nextQuote() {
     if (_index < _quotes.length - 1) {
@@ -69,4 +66,10 @@ class QuoteProvider extends ChangeNotifier {
     _isLoading = false;
     notifyListeners();
   }
+
+  // Getters
+
+  String get selectedImage => _selectedImage;
+  QuoteModel? get quote => _quotes.isEmpty ? null : _quotes[_index];
+  bool get isLoading => _isLoading;
 }
