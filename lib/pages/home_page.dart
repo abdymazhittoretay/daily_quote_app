@@ -51,7 +51,6 @@ class _HomePageState extends State<HomePage> {
       }
     } catch (e) {
       print("Error fetching quotes: $e");
-      // Display a snackbar or error message to the user
     }
   }
 
