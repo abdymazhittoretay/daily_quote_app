@@ -67,7 +67,9 @@ class HomePage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              quoteProvider.nextQuote();
+                            },
                             icon: Icon(
                               Icons.restart_alt,
                               color: Colors.white,

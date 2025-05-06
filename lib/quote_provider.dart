@@ -36,6 +36,15 @@ class QuoteProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  void nextQuote() {
+    if (_index < _quotes.length - 1) {
+      _index++;
+      notifyListeners();
+    } else {
+      getRandomQuotes();
+    }
+  }
+
   Future<void> getRandomQuotes() async {
     _quotes = [];
     _index = 0;
