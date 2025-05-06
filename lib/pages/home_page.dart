@@ -42,7 +42,9 @@ class HomePage extends StatelessWidget {
                             color: Colors.white,
                           ),
                           Text(
-                            quote.quote,
+                            quote.quote.isEmpty
+                                ? "For some reason there is no quote! I am sorry!"
+                                : quote.quote,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
@@ -58,7 +60,7 @@ class HomePage extends StatelessWidget {
                               Icon(Icons.person, color: Colors.white),
                               SizedBox(width: 6.0),
                               Text(
-                                quote.author,
+                                quote.author.isEmpty ? "Unknown" : quote.author,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.white,
