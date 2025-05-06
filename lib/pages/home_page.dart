@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
 
   final Random random = Random();
 
-  QuoteModel? randomQuote;
+  final List<QuoteModel> _quotes = [];
 
   @override
   void initState() {
@@ -36,14 +36,16 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> getRandomQuote() async {
-    final Uri url = Uri.https("zenquotes.io", "/api/random");
+    final Uri url = Uri.https("zenquotes.io", "/api/quotes");
     try {
       final response = await http.get(url);
       if (response.statusCode == 200) {
         final data = jsonDecode(response.body);
-        setState(() {
-          randomQuote = QuoteModel(quote: data[0]["q"], author: data[0]["a"]);
-        });
+        for (var i in data) {
+          final QuoteModel quote = QuoteModel(quote: i["q"], author: i["a"]);
+          _quotes.add(quote);
+        }
+        setState(() {});
       }
     } catch (e) {
       print("Some http error: $e");
@@ -67,7 +69,7 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child:
-              randomQuote == null
+              _quotes.isEmpty
                   ? Center(
                     child: CircularProgressIndicator(color: Colors.white),
                   )
@@ -81,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                       ),
                       Text(
-                        randomQuote!.quote,
+                        _quotes[30].quote,
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white, fontSize: 30.0),
                       ),
@@ -94,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                           Icon(Icons.person, color: Colors.white),
                           SizedBox(width: 6.0),
                           Text(
-                            randomQuote!.author,
+                            _quotes[0].author,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
@@ -110,9 +112,7 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           IconButton(
-                            onPressed: () {
-                              getRandomQuote();
-                            },
+                            onPressed: () {},
                             icon: Icon(
                               Icons.restart_alt,
                               color: Colors.white,
