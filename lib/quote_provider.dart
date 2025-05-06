@@ -59,6 +59,8 @@ class QuoteProvider extends ChangeNotifier {
           final QuoteModel quote = QuoteModel(quote: i["q"], author: i["a"]);
           _quotes.add(quote);
         }
+      } else {
+        print("Server error: ${response.statusCode}");
       }
     } catch (e) {
       print("Error fetching quotes: $e");
