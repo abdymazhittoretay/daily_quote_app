@@ -27,9 +27,12 @@ class QuoteProvider extends ChangeNotifier {
 
   int _index = 0;
 
-  QuoteModel? get quote => _quotes.isEmpty ? null : _quotes[_index];
+  bool _isLoading = false;
+
   String get selectedImage => _selectedImage;
   int get index => _index;
+  QuoteModel? get quote => _quotes.isEmpty ? null : _quotes[_index];
+  bool get isLoading => _isLoading;
 
   void selectRandomImage() {
     _selectedImage = images[random.nextInt(images.length)];
@@ -46,6 +49,8 @@ class QuoteProvider extends ChangeNotifier {
   }
 
   Future<void> getRandomQuotes() async {
+    _isLoading = true;
+    notifyListeners();
     _quotes = [];
     _index = 0;
     final Uri url = Uri.https("zenquotes.io", "/api/quotes");
@@ -57,10 +62,11 @@ class QuoteProvider extends ChangeNotifier {
           final QuoteModel quote = QuoteModel(quote: i["q"], author: i["a"]);
           _quotes.add(quote);
         }
-        notifyListeners();
       }
     } catch (e) {
       print("Error fetching quotes: $e");
     }
+    _isLoading = false;
+    notifyListeners();
   }
 }

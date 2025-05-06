@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child:
-              quote == null
+              quoteProvider.isLoading || quote == null
                   ? Center(
                     child: CircularProgressIndicator(color: Colors.white),
                   )
