@@ -1,28 +1,14 @@
-import 'dart:convert';
-import 'dart:math';
-
-import 'package:daily_quote_app/models/quote_model.dart';
+import 'package:daily_quote_app/quote_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-import 'package:http/http.dart' as http;
-
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  
-
-  @override
-  void initState() {
-    super.initState();
-  }
-  
-  @override
   Widget build(BuildContext context) {
+    final quoteProvider = Provider.of<QuoteProvider>(context);
+    final quote = quoteProvider.quote;
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
@@ -30,7 +16,7 @@ class _HomePageState extends State<HomePage> {
         height: double.maxFinite,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage(_selectedImage),
+            image: AssetImage(quoteProvider.selectedImage),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
           ),
@@ -38,7 +24,7 @@ class _HomePageState extends State<HomePage> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
           child:
-              _quotes.isEmpty
+              quote == null
                   ? Center(
                     child: CircularProgressIndicator(color: Colors.white),
                   )
@@ -52,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                       ),
                       Text(
-                        _quotes[_index].quote,
+                        quote.quote,
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white, fontSize: 30.0),
                       ),
@@ -65,7 +51,7 @@ class _HomePageState extends State<HomePage> {
                           Icon(Icons.person, color: Colors.white),
                           SizedBox(width: 6.0),
                           Text(
-                            _quotes[_index].author,
+                            quote.author,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
@@ -81,16 +67,7 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           IconButton(
-                            onPressed: () {
-                              if (_index < _quotes.length - 1) {
-                                setState(() {
-                                  _index++;
-                                });
-                              } else {
-                                getRandomQuotes();
-                                setState(() {});
-                              }
-                            },
+                            onPressed: () {},
                             icon: Icon(
                               Icons.restart_alt,
                               color: Colors.white,

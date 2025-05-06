@@ -27,7 +27,7 @@ class QuoteProvider extends ChangeNotifier {
 
   int _index = 0;
 
-  QuoteModel get quote => _quotes[_index];
+  QuoteModel? get quote => _quotes.isEmpty ? null : _quotes[_index];
   String get selectedImage => _selectedImage;
   int get index => _index;
 
