@@ -50,7 +50,8 @@ class _HomePageState extends State<HomePage> {
         setState(() {});
       }
     } catch (e) {
-      print("Some http error: $e");
+      print("Error fetching quotes: $e");
+      // Display a snackbar or error message to the user
     }
   }
 
