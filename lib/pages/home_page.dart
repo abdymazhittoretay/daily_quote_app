@@ -26,16 +26,18 @@ class _HomePageState extends State<HomePage> {
 
   final Random random = Random();
 
-  final List<QuoteModel> _quotes = [];
+  List<QuoteModel> _quotes = [];
+
+  int _index = 0;
 
   @override
   void initState() {
     super.initState();
     _selectedImage = images[random.nextInt(images.length)];
-    getRandomQuote();
+    getRandomQuotes();
   }
 
-  Future<void> getRandomQuote() async {
+  Future<void> getRandomQuotes() async {
     final Uri url = Uri.https("zenquotes.io", "/api/quotes");
     try {
       final response = await http.get(url);
@@ -83,7 +85,7 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                       ),
                       Text(
-                        _quotes[30].quote,
+                        _quotes[_index].quote,
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.white, fontSize: 30.0),
                       ),
@@ -96,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                           Icon(Icons.person, color: Colors.white),
                           SizedBox(width: 6.0),
                           Text(
-                            _quotes[0].author,
+                            _quotes[_index].author,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.white,
@@ -112,7 +114,18 @@ class _HomePageState extends State<HomePage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              if (_index < _quotes.length - 1) {
+                                setState(() {
+                                  _index++;
+                                });
+                              } else {
+                                _quotes = [];
+                                _index = 0;
+                                getRandomQuotes();
+                                setState(() {});
+                              }
+                            },
                             icon: Icon(
                               Icons.restart_alt,
                               color: Colors.white,
