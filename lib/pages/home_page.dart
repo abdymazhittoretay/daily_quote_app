@@ -38,6 +38,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> getRandomQuotes() async {
+    _quotes = [];
+    _index = 0;
     final Uri url = Uri.https("zenquotes.io", "/api/quotes");
     try {
       final response = await http.get(url);
@@ -120,8 +122,6 @@ class _HomePageState extends State<HomePage> {
                                   _index++;
                                 });
                               } else {
-                                _quotes = [];
-                                _index = 0;
                                 getRandomQuotes();
                                 setState(() {});
                               }
