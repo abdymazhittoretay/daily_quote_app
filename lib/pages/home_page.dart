@@ -10,19 +10,20 @@ class HomePage extends StatelessWidget {
     return Consumer<QuoteProvider>(
       builder: (context, quoteProvider, child) {
         final quote = quoteProvider.quote;
-        return Scaffold(
-          backgroundColor: Colors.black,
-          body: Container(
-            width: double.maxFinite,
-            height: double.maxFinite,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(quoteProvider.selectedImage),
-                fit: BoxFit.cover,
-                colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
-              ),
+        return Container(
+          width: double.maxFinite,
+          height: double.maxFinite,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(quoteProvider.selectedImage),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(Colors.black45, BlendMode.darken),
             ),
-            child: Padding(
+          ),
+          child: Scaffold(
+            backgroundColor: Colors.transparent,
+            body: Container(
+              alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(
                 horizontal: 16.0,
                 vertical: 12.0,
