@@ -37,7 +37,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           "Favorites",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(fontSize: 16.0, color: Colors.white),
                         ),
                         SizedBox(width: 6.0),
                         Icon(Icons.favorite, color: Colors.white),
