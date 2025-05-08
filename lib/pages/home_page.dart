@@ -24,6 +24,7 @@ class HomePage extends StatelessWidget {
             backgroundColor: Colors.transparent,
             appBar: AppBar(
               backgroundColor: Colors.transparent,
+              actionsPadding: EdgeInsets.symmetric(horizontal: 8.0),
               actions: [
                 InkWell(
                   borderRadius: BorderRadius.circular(12.0),
