@@ -22,6 +22,31 @@ class HomePage extends StatelessWidget {
           ),
           child: Scaffold(
             backgroundColor: Colors.transparent,
+            appBar: AppBar(
+              backgroundColor: Colors.transparent,
+              actions: [
+                InkWell(
+                  borderRadius: BorderRadius.circular(12.0),
+                  onTap: () {},
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Favorites",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        SizedBox(width: 6.0),
+                        Icon(Icons.favorite, color: Colors.white),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
             body: Container(
               alignment: Alignment.center,
               padding: const EdgeInsets.symmetric(
