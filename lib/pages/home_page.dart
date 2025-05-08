@@ -41,7 +41,8 @@ class HomePage extends StatelessWidget {
                             size: 100.0,
                             color: Colors.white,
                           ),
-                          Text(
+                          SelectableText(
+                            cursorWidth: 0.0,
                             quote.quote.isEmpty
                                 ? "For some reason there is no quote! I am sorry!"
                                 : quote.quote,
@@ -59,7 +60,8 @@ class HomePage extends StatelessWidget {
                             children: [
                               Icon(Icons.person, color: Colors.white),
                               SizedBox(width: 6.0),
-                              Text(
+                              SelectableText(
+                                cursorWidth: 0.0,
                                 quote.author.isEmpty ? "Unknown" : quote.author,
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
