@@ -1,3 +1,4 @@
+import 'package:daily_quote_app/pages/favorites_page.dart';
 import 'package:daily_quote_app/quote_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +29,12 @@ class HomePage extends StatelessWidget {
               actions: [
                 InkWell(
                   borderRadius: BorderRadius.circular(12.0),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => FavoritesPage()),
+                    );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(
