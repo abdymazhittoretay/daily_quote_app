@@ -9,6 +9,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(FavoriteQuoteModelAdapter());
+  var box = await Hive.openBox<FavoriteQuoteModel>("favQuotesBox");
   runApp(
     ChangeNotifierProvider(
       create: (context) => QuoteProvider(),
