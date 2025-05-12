@@ -1,0 +1,14 @@
+import 'package:hive/hive.dart';
+
+part 'favorite_quote_model.g.dart';
+
+@HiveType(typeId: 1)
+class FavoriteQuoteModel {
+  @HiveField(0)
+  final String quote;
+
+  @HiveField(1)
+  final String author;
+
+  FavoriteQuoteModel({required this.quote, required this.author});
+}
