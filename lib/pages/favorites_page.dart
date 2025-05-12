@@ -27,7 +27,16 @@ class FavoritesPage extends StatelessWidget {
             itemBuilder: (context, index) {
               final FavoriteQuoteModel favQuote = favQuotesBox.getAt(index);
               return ListTile(
-                title: Text(favQuote.quote),
+                contentPadding: EdgeInsets.only(
+                  left: 16.0,
+                  right: 8.0,
+                  bottom: 8.0,
+                ),
+                title: Text(favQuote.quote, style: TextStyle(fontSize: 18.0)),
+                subtitle: Text(
+                  favQuote.author,
+                  style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                ),
                 trailing: IconButton(
                   onPressed: () {
                     favQuoteProvider.addRemoveQuote(favQuote);
