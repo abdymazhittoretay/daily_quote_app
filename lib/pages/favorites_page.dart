@@ -25,7 +25,9 @@ class FavoritesPage extends StatelessWidget {
           return ListView.builder(
             itemCount: favQuotesBox.length,
             itemBuilder: (context, index) {
-              final FavoriteQuoteModel favQuote = favQuotesBox.getAt(index);
+              final FavoriteQuoteModel favQuote = favQuotesBox.getAt(
+                favQuotesBox.length - index - 1,
+              );
               return ListTile(
                 contentPadding: EdgeInsets.only(
                   left: 16.0,
