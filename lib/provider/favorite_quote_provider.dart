@@ -4,4 +4,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 
 class FavoriteQuoteProvider extends ChangeNotifier {
   late Box<FavoriteQuoteModel> _favQuotesBox;
+
+  Future<void> initBox() async {
+    _favQuotesBox = await Hive.openBox<FavoriteQuoteModel>("favQuotesBox");
+  }
 }

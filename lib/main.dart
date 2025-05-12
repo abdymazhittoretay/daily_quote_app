@@ -1,5 +1,6 @@
 import 'package:daily_quote_app/models/favorite_quote_model.dart';
 import 'package:daily_quote_app/pages/home_page.dart';
+import 'package:daily_quote_app/provider/favorite_quote_provider.dart';
 import 'package:daily_quote_app/provider/quote_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -9,7 +10,8 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(FavoriteQuoteModelAdapter());
-  var box = await Hive.openBox<FavoriteQuoteModel>("favQuotesBox");
+  final FavoriteQuoteProvider favQuoteProvider = FavoriteQuoteProvider();
+  await favQuoteProvider.initBox();
   runApp(
     ChangeNotifierProvider(
       create: (context) => QuoteProvider(),
