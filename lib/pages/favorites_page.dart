@@ -1,7 +1,7 @@
-import 'package:daily_quote_app/boxes.dart';
 import 'package:daily_quote_app/models/favorite_quote_model.dart';
 import 'package:daily_quote_app/provider/favorite_quote_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 import 'package:provider/provider.dart';
 
 class FavoritesPage extends StatelessWidget {
@@ -13,6 +13,7 @@ class FavoritesPage extends StatelessWidget {
       appBar: AppBar(title: Text("Favorite quotes"), centerTitle: true),
       body: Consumer<FavoriteQuoteProvider>(
         builder: (context, favQuoteProvider, child) {
+          final Box favQuotesBox = favQuoteProvider.favQuotesBox;
           if (favQuotesBox.isEmpty) {
             return Center(
               child: Text(
