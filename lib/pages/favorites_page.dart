@@ -30,7 +30,8 @@ class FavoritesPage extends StatelessWidget {
                 contentPadding: EdgeInsets.only(
                   left: 16.0,
                   right: 8.0,
-                  bottom: 8.0,
+                  top: 4.0,
+                  bottom: 4.0,
                 ),
                 title: Text(favQuote.quote, style: TextStyle(fontSize: 18.0)),
                 subtitle: Text(
