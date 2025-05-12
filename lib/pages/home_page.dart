@@ -1,4 +1,6 @@
+import 'package:daily_quote_app/models/favorite_quote_model.dart';
 import 'package:daily_quote_app/pages/favorites_page.dart';
+import 'package:daily_quote_app/provider/favorite_quote_provider.dart';
 import 'package:daily_quote_app/provider/quote_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -122,9 +124,28 @@ class HomePage extends StatelessWidget {
                               ),
                               SizedBox(width: 12.0),
                               IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Provider.of<FavoriteQuoteProvider>(
+                                    context,
+                                    listen: false,
+                                  ).addRemoveQuote(
+                                    FavoriteQuoteModel(
+                                      quote: quote.quote,
+                                      author: quote.author,
+                                    ),
+                                  );
+                                },
                                 icon: Icon(
-                                  Icons.favorite_border,
+                                  Provider.of<FavoriteQuoteProvider>(
+                                        context,
+                                      ).isFavorite(
+                                        FavoriteQuoteModel(
+                                          quote: quote.quote,
+                                          author: quote.author,
+                                        ),
+                                      )
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
                                   color: Colors.white,
                                   size: 40.0,
                                 ),
