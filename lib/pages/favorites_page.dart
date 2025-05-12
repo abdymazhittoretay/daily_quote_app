@@ -41,6 +41,8 @@ class FavoritesPage extends StatelessWidget {
                   onPressed: () {
                     favQuoteProvider.addRemoveQuote(favQuote);
                   },
+                  iconSize: 30.0,
+                  color: Colors.red,
                   icon:
                       favQuoteProvider.isFavorite(favQuote)
                           ? Icon(Icons.favorite)
