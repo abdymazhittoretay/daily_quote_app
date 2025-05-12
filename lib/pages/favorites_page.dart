@@ -13,6 +13,14 @@ class FavoritesPage extends StatelessWidget {
       appBar: AppBar(title: Text("Favorite quotes"), centerTitle: true),
       body: Consumer<FavoriteQuoteProvider>(
         builder: (context, favQuoteProvider, child) {
+          if (favQuotesBox.isEmpty) {
+            return Center(
+              child: Text(
+                "There are no favorites yet.",
+                style: TextStyle(fontSize: 16.0),
+              ),
+            );
+          }
           return ListView.builder(
             itemCount: favQuotesBox.length,
             itemBuilder: (context, index) {
