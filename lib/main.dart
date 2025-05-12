@@ -13,8 +13,11 @@ void main() async {
   final FavoriteQuoteProvider favQuoteProvider = FavoriteQuoteProvider();
   await favQuoteProvider.initBox();
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => QuoteProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => QuoteProvider()),
+        ChangeNotifierProvider(create: (context) => FavoriteQuoteProvider()),
+      ],
       child: const MyApp(),
     ),
   );
