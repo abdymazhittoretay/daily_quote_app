@@ -1,9 +1,12 @@
 import 'package:daily_quote_app/pages/home_page.dart';
 import 'package:daily_quote_app/quote_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
   runApp(
     ChangeNotifierProvider(
       create: (context) => QuoteProvider(),
