@@ -1,5 +1,5 @@
 import 'package:daily_quote_app/pages/favorites_page.dart';
-import 'package:daily_quote_app/quote_provider.dart';
+import 'package:daily_quote_app/provider/quote_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

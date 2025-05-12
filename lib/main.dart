@@ -1,6 +1,6 @@
 import 'package:daily_quote_app/models/favorite_quote_model.dart';
 import 'package:daily_quote_app/pages/home_page.dart';
-import 'package:daily_quote_app/quote_provider.dart';
+import 'package:daily_quote_app/provider/quote_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:provider/provider.dart';
