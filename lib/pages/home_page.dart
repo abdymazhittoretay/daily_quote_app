@@ -146,7 +146,17 @@ class HomePage extends StatelessWidget {
                                       )
                                       ? Icons.favorite
                                       : Icons.favorite_border,
-                                  color: Colors.white,
+                                  color:
+                                      Provider.of<FavoriteQuoteProvider>(
+                                            context,
+                                          ).isFavorite(
+                                            FavoriteQuoteModel(
+                                              quote: quote.quote,
+                                              author: quote.author,
+                                            ),
+                                          )
+                                          ? Colors.red
+                                          : Colors.white,
                                   size: 40.0,
                                 ),
                               ),
