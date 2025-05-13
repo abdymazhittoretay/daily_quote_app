@@ -125,36 +125,35 @@ class HomePage extends StatelessWidget {
                               SizedBox(width: 12.0),
                               IconButton(
                                 onPressed: () {
-                                  Provider.of<FavoriteQuoteProvider>(
-                                    context,
-                                    listen: false,
-                                  ).addRemoveQuote(
-                                    FavoriteQuoteModel(
-                                      quote: quote.quote,
-                                      author: quote.author,
-                                    ),
-                                  );
-                                },
-                                icon: Icon(
-                                  Provider.of<FavoriteQuoteProvider>(
-                                        context,
-                                      ).isFavorite(
+                                  context
+                                      .read<FavoriteQuoteProvider>()
+                                      .addRemoveQuote(
                                         FavoriteQuoteModel(
                                           quote: quote.quote,
                                           author: quote.author,
                                         ),
-                                      )
-                                      ? Icons.favorite
-                                      : Icons.favorite_border,
-                                  color:
-                                      Provider.of<FavoriteQuoteProvider>(
-                                            context,
-                                          ).isFavorite(
+                                      );
+                                },
+                                icon: Icon(
+                                  context
+                                          .watch<FavoriteQuoteProvider>()
+                                          .isFavorite(
                                             FavoriteQuoteModel(
                                               quote: quote.quote,
                                               author: quote.author,
                                             ),
                                           )
+                                      ? Icons.favorite
+                                      : Icons.favorite_border,
+                                  color:
+                                      context
+                                              .watch<FavoriteQuoteProvider>()
+                                              .isFavorite(
+                                                FavoriteQuoteModel(
+                                                  quote: quote.quote,
+                                                  author: quote.author,
+                                                ),
+                                              )
                                           ? Colors.red
                                           : Colors.white,
                                   size: 40.0,
