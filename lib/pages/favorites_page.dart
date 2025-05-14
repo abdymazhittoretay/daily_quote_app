@@ -22,12 +22,14 @@ class FavoritesPage extends StatelessWidget {
               ),
             );
           }
+          final List<dynamic> favQuotes = favQuotesBox.values.toList();
+
+          favQuotes.sort((a, b) => b.dateTime.compareTo(a.dateTime));
+
           return ListView.builder(
-            itemCount: favQuotesBox.length,
+            itemCount: favQuotes.length,
             itemBuilder: (context, index) {
-              final FavoriteQuoteModel favQuote = favQuotesBox.getAt(
-                favQuotesBox.length - index - 1,
-              );
+              final FavoriteQuoteModel favQuote = favQuotes[index];
               return ListTile(
                 contentPadding: EdgeInsets.only(
                   left: 16.0,
