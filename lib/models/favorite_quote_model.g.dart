@@ -8,7 +8,7 @@ part of 'favorite_quote_model.dart';
 
 class FavoriteQuoteModelAdapter extends TypeAdapter<FavoriteQuoteModel> {
   @override
-  final int typeId = 0;
+  final int typeId = 1;
 
   @override
   FavoriteQuoteModel read(BinaryReader reader) {
@@ -19,17 +19,20 @@ class FavoriteQuoteModelAdapter extends TypeAdapter<FavoriteQuoteModel> {
     return FavoriteQuoteModel(
       quote: fields[0] as String,
       author: fields[1] as String,
+      dateTime: fields[2] as DateTime,
     );
   }
 
   @override
   void write(BinaryWriter writer, FavoriteQuoteModel obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.quote)
       ..writeByte(1)
-      ..write(obj.author);
+      ..write(obj.author)
+      ..writeByte(2)
+      ..write(obj.dateTime);
   }
 
   @override

@@ -10,5 +10,12 @@ class FavoriteQuoteModel {
   @HiveField(1)
   final String author;
 
-  FavoriteQuoteModel({required this.quote, required this.author});
+  @HiveField(2)
+  final DateTime dateTime;
+
+  FavoriteQuoteModel({
+    required this.quote,
+    required this.author,
+    required this.dateTime,
+  });
 }

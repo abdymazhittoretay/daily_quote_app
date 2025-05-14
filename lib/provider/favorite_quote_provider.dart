@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class FavoriteQuoteProvider extends ChangeNotifier {
-  final Box _favQuotesBox = Hive.box("favQuotesBox");
+  final Box _favQuotesBox = Hive.box("favoritesBox");
 
   Box get favQuotesBox => _favQuotesBox;
 

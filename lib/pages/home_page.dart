@@ -131,6 +131,7 @@ class HomePage extends StatelessWidget {
                                         FavoriteQuoteModel(
                                           quote: quote.quote,
                                           author: quote.author,
+                                          dateTime: DateTime.now(),
                                         ),
                                       );
                                 },
@@ -141,6 +142,7 @@ class HomePage extends StatelessWidget {
                                             FavoriteQuoteModel(
                                               quote: quote.quote,
                                               author: quote.author,
+                                              dateTime: DateTime.now(),
                                             ),
                                           )
                                       ? Icons.favorite
@@ -152,6 +154,7 @@ class HomePage extends StatelessWidget {
                                                 FavoriteQuoteModel(
                                                   quote: quote.quote,
                                                   author: quote.author,
+                                                  dateTime: DateTime.now(),
                                                 ),
                                               )
                                           ? Colors.red
