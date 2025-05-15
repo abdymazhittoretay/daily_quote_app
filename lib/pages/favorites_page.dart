@@ -24,6 +24,8 @@ class FavoritesPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           backgroundColor: Colors.transparent,
+          foregroundColor: Colors.white,
+          surfaceTintColor: Colors.transparent,
           title: Text("Favorite quotes"),
           centerTitle: true,
         ),
