@@ -56,6 +56,7 @@ class FavoritesPage extends StatelessWidget {
                     top: 4.0,
                     bottom: 4.0,
                   ),
+                  leading: Icon(Icons.format_quote, color: Colors.white),
                   title: Text(favQuote.quote, style: TextStyle(fontSize: 18.0)),
                   subtitle: Row(
                     mainAxisSize: MainAxisSize.min,
