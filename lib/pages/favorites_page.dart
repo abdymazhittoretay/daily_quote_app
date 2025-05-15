@@ -49,6 +49,7 @@ class FavoritesPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 final FavoriteQuoteModel favQuote = favQuotes[index];
                 return ListTile(
+                  textColor: Colors.white,
                   contentPadding: EdgeInsets.only(
                     left: 16.0,
                     right: 8.0,
@@ -56,9 +57,19 @@ class FavoritesPage extends StatelessWidget {
                     bottom: 4.0,
                   ),
                   title: Text(favQuote.quote, style: TextStyle(fontSize: 18.0)),
-                  subtitle: Text(
-                    favQuote.author,
-                    style: TextStyle(color: Colors.grey, fontSize: 16.0),
+                  subtitle: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.person, color: Colors.white),
+                      SizedBox(width: 3.0),
+                      Text(
+                        favQuote.author,
+                        style: TextStyle(
+                          color: Colors.grey[300],
+                          fontSize: 16.0,
+                        ),
+                      ),
+                    ],
                   ),
                   trailing: IconButton(
                     onPressed: () {
