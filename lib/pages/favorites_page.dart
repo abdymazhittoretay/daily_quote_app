@@ -36,7 +36,7 @@ class FavoritesPage extends StatelessWidget {
               return Center(
                 child: Text(
                   "There are no favorites yet.",
-                  style: TextStyle(fontSize: 16.0),
+                  style: TextStyle(fontSize: 16.0, color: Colors.white),
                 ),
               );
             }
